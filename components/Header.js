@@ -98,7 +98,7 @@ const Header = ({ menu = null , currentLocale = 'en-us', locales = ['en-us'], al
                                 >
                                 {section.items.map((item) => (
                                     <li key={item?.subSectionTitle} className="flow-root">
-                                    <a href={item?.subSectionLink?.url} className="-m-2 p-2 block text-gray-500">
+                                    <a href={linkResolver(item?.subSectionLink)} className="-m-2 p-2 block text-gray-500">
                                         {item?.subSectionTitle}
                                     </a>
                                     </li>
@@ -194,7 +194,7 @@ const Header = ({ menu = null , currentLocale = 'en-us', locales = ['en-us'], al
                                                 >
                                                     {section?.items?.map((item) => (
                                                     <li key={item?.subSectionTitle} className="flex">
-                                                        <a href={item?.subSectionLink?.url} className="hover:text-gray-800">
+                                                        <a href={linkResolver(item?.subSectionLink)} className="hover:text-gray-800">
                                                         {item?.subSectionTitle}
                                                         </a>
                                                     </li>

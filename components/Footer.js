@@ -1,4 +1,5 @@
 import React from "react";
+import { linkResolver } from "../prismicio";
 
 export default function Header({ footer = [], }){
     
@@ -17,7 +18,7 @@ export default function Header({ footer = [], }){
                         <ul role="list" className="mt-6 space-y-6">
                             {column.items.map((item) => (
                             <li key={item.link_label} className="text-sm">
-                                <a href={item.link.url} className="text-gray-500 hover:text-gray-600">
+                                <a href={linkResolver(item.link)} className="text-gray-500 hover:text-gray-600">
                                 {item.link_label}
                                 </a>
                             </li>

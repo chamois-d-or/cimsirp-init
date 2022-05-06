@@ -9,25 +9,24 @@ export const repositoryName = prismic.getRepositoryName(endpoint)
 export function linkResolver(doc) {
   switch (doc.type) {
     case 'home-page':
-      return `/`
+      return `/${doc.lang}`
     case 'page':
-      return `/${doc.uid}`
+      return `/${doc.lang}/${doc.uid}`
     case 'blog-page':
-      return `/blog/${doc.uid}`
+      return `/${doc.lang}/blog/${doc.uid}`
     case 'product-page':
-      return `/product/${doc.uid}`
+      return `/${doc.lang}/product/${doc.uid}`
       case 'category-page':
-        return `/category/${doc.uid}`
+        return `/${doc.lang}/category/${doc.uid}`
     default:
-      return '/'
+      return null
   }
 }
 
 // This factory function allows smooth preview setup
 export function createClient(config = {}) {
   const client = prismic.createClient(endpoint, {
-    ...config,
-    routes: routeResolver.routes
+    ...config
   })
 
   enableAutoPreviews({
@@ -38,37 +37,3 @@ export function createClient(config = {}) {
 
   return client
 }
-
-//Route resolver to match your project's route structure
-
-export const routeResolver = {
-  routes: [
-    {
-      "type":"page",
-      "path":"/:lang/:uid"
-    },
-    {
-      "type":"product-page",
-      "path":"/:lang/product/:uid"
-    },
-    {
-      "type":"category-page",
-      "path":"/:lang/category/:uid"
-    },
-    {
-      "type":"blog-page",
-      "path":"/:lang/blog/:uid"
-    },
-    // {
-    //   "type":"uniform-page",
-    //   "path":"/uniform/:uid"
-    // },
-    {
-      "type":"home-page",
-      "path":"/:lang"
-    },],
-  href: (type) => {
-    const route = routeResolver.routes.find(r => r.type === type);
-    return route && route.href;
-  }
-};

@@ -1,5 +1,5 @@
 //Import Prismic configuration
-import { createClient } from '../../prismicio'
+import { createClient, linkResolver } from '../../prismicio'
 
 // Import Slicezone, Layout and Loader components
 import { SliceZone } from "@prismicio/react"
@@ -79,7 +79,7 @@ export async function getStaticPaths() {
   const documents = await client.getAllByType('product-page',{ lang: '*' })
 
   return {
-    paths: documents.map((doc) => prismicH.asLink(doc)),
+    paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
     fallback: true,
   }
 }
