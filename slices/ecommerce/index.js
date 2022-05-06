@@ -6,7 +6,6 @@ import ChartSlice from './ChartSlice';
 import ExternalVideoSlice from './ExternalVideoSlice';
 import HeroBanner from './HeroBanner';
 import ProductFeaturesWithWideImages from './ProductFeaturesWithWideImages';
-import ProductListWithCta from './ProductListWithCta';
 import PromoSectionFadingBackgroundTestimonials from './PromoSectionFadingBackgroundTestimonials';
 import PromoSectionFullWidthWithOverlappingImageTiles from './PromoSectionFullWidthWithOverlappingImageTiles';
 import PromoSectionImageTiles from './PromoSectionImageTiles';
@@ -19,7 +18,6 @@ export {
 	ExternalVideoSlice,
 	HeroBanner,
 	ProductFeaturesWithWideImages,
-	ProductListWithCta,
 	PromoSectionFadingBackgroundTestimonials,
 	PromoSectionFullWidthWithOverlappingImageTiles,
 	PromoSectionImageTiles,
@@ -33,7 +31,6 @@ export const components = {
 	external_video_slice: ExternalVideoSlice,
 	hero_banner: HeroBanner,
 	product_features_with_wide_images: ProductFeaturesWithWideImages,
-	product_list_with_cta: ProductListWithCta,
 	promo_section_fading_background_testimonials: PromoSectionFadingBackgroundTestimonials,
 	promo_section_full_width_with_overlapping_image_tiles: PromoSectionFullWidthWithOverlappingImageTiles,
 	promo_section_image_tiles: PromoSectionImageTiles,

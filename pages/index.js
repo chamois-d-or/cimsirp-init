@@ -6,7 +6,7 @@ import { components as marketingComponents } from '../slices/marketing/index'
 import { components as navigationComponents } from '../slices/navigation/index'
 
 // Menu graphQuery
-import { menuGraphQuery, productListGraphQuery } from '../tools/graphQueries'
+import { menuGraphQuery } from '../tools/graphQueries'
 import Layout from "../components/Layout"
 
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
@@ -34,31 +34,6 @@ export async function getStaticProps({previewData, locale, locales}) {
     }
   }
 
-  //Querying linked product data through GraphQuery
-  const productListData = (await client.getSingle("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
-    return {}
-  }));
-
-  //Incorporating new slices with linked product data in existing slice array
-  let index=0
-  const docWithProductLists = {
-    ...document,
-    data : {
-      ...document.data,
-      slices: document?.data?.slices?.map(slice => {
-        if(slice.slice_type === "product_list_with_cta"){
-          index ++
-          return {
-            ...productListData?.data?.slices[index-1]
-          }
-        }
-        return {
-          ...slice
-        }
-      })
-    }
-  }
-
   //Querying the Menu here so that it can be previewed at the same time as the page (in a release)
   const menu = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
     return {}
@@ -71,7 +46,7 @@ export async function getStaticProps({previewData, locale, locales}) {
 
   return {
     props:{
-      doc: docWithProductLists,
+      doc: document,
       menu: menu,
       locale: locale,
       locales: locales,

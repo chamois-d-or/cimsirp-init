@@ -15,7 +15,7 @@
       "product": {
         "type": "IntegrationFields",
         "config": {
-          "catalog": "cimsirp--products",
+          "catalog": "suns-demo--products",
           "label": "Top Product"
         }
       },
@@ -52,9 +52,6 @@
         "config": {
           "choices": {
             "promo_section_with_background_image": {
-              "type": "SharedSlice"
-            },
-            "product_list_with_cta": {
               "type": "SharedSlice"
             },
             "product_features_with_wide_images": {

@@ -14,7 +14,7 @@
         "video": {
           "type": "IntegrationFields",
           "config": {
-            "catalog": "cimsirp--external_videos",
+            "catalog": "suns-demo--external_videos",
             "label": "Video"
           }
         }
