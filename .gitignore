@@ -35,3 +35,4 @@ yarn-error.log*
 
 # demo
 tools/updateSlicesAndCT.js
+tools/pushSlices.js
