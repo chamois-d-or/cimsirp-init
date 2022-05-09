@@ -34,4 +34,4 @@ yarn-error.log*
 .vercel
 
 # demo
-updateSlicesAndCT.js
+tools/updateSlicesAndCT.js
