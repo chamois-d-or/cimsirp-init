@@ -560,7 +560,7 @@
                 "video": {
                   "type": "IntegrationFields",
                   "config": {
-                    "catalog": "suns-demo--external_videos",
+                    "catalog": "cimsirp-init--external_videos",
                     "label": "Video"
                   }
                 }

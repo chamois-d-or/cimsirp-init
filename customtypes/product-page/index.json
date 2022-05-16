@@ -15,7 +15,7 @@
       "product": {
         "type": "IntegrationFields",
         "config": {
-          "catalog": "suns-demo--products",
+          "catalog": "cimsirp-init--products",
           "label": "Top Product"
         }
       },
